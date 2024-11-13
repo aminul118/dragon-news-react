@@ -12,10 +12,16 @@ const LeftNavbar = () => {
   //   console.log(categories);
   return (
     <div className="space-y-4">
-      <h2 className="text-xl font-bold">Category</h2>
+      <h2 className="text-xl font-bold">Category ({categories.length})</h2>
       <div className="flex flex-col gap-2 items-center">
         {categories.map((category) => (
-          <NavLink key={category._id} className={`btn w-full`}>{category.category_name}</NavLink>
+          <NavLink
+            to={`/category/${category.category_id}`}
+            key={category.category_id}
+            className={`btn w-full`}
+          >
+            {category.category_name}
+          </NavLink>
         ))}
       </div>
     </div>
